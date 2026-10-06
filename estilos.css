@@ -1,0 +1,258 @@
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+  color: #3b3b3b;
+  min-height: 100vh;
+
+  /* Fondo de flores + capa suave para que el texto se lea bien */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.88)),
+    url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* En pantallas grandes sí usamos fixed, que se ve más elegante */
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+header {
+  text-align: center;
+  padding: 55px 20px 30px;
+}
+
+/* Marca: "Esencias de Ana" */
+.marca {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.2rem;
+  color: #7a5c8e;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  text-shadow:
+    1px 1px 2px rgba(255, 255, 255, 0.9),
+    0 4px 12px rgba(122, 92, 142, 0.25);
+}
+
+/* Subtítulo */
+.subtitulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #5a4a6a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Adorno decorativo */
+.adorno {
+  font-size: 1.4rem;
+  color: #b79dcd;
+  margin: 6px 0 16px;
+  letter-spacing: 12px;
+  padding-left: 12px;
+}
+
+/* Descripción */
+.descripcion {
+  font-family: 'Quicksand', sans-serif;
+  font-size: .95rem;
+  color: #8a8a8a;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+  letter-spacing: .3px;
+}
+
+/* ============================================
+   FILTROS POR GÉNERO
+   ============================================ */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.filtro {
+  padding: 8px 20px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #7a5c8e;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #d9c9ea;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .2s ease;
+  font-family: inherit;
+}
+
+.filtro:hover {
+  background: #f0e6fa;
+  transform: translateY(-2px);
+}
+
+.filtro.activo {
+  background: linear-gradient(135deg, #7a5c8e, #9a7bb0);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(122, 92, 142, 0.3);
+}
+
+/* ============================================
+   REJILLA DE TARJETAS
+   ============================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 25px 30px 60px;
+}
+
+/* Tarjeta */
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(122, 92, 142, 0.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(122, 92, 142, 0.28);
+}
+
+/* Contenedor de la imagen con zoom suave al pasar mouse */
+.img-wrap {
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
+  background: #f0ecf5;
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  padding: 10px;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+/* Etiqueta del género */
+.card .genero {
+  display: inline-block;
+  margin: 12px auto 16px;
+  padding: 5px 14px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #7a5c8e;
+  background: #f0e6fa;
+  border-radius: 50px;
+  align-self: center;
+}
+
+/* ============================================
+   FOOTER + BOTÓN
+   ============================================ */
+footer {
+  text-align: center;
+  padding: 20px 20px 70px;
+  color: #6a6a6a;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+footer p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: #6a5a7a;
+  font-style: italic;
+  max-width: 500px;
+  margin: 0 auto 22px;
+}
+
+.btn-wa-final {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #25D366, #1ebe5b);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn-wa-final:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* ============================================
+   MÓVIL
+   ============================================ */
+@media (max-width: 480px) {
+  header { padding: 40px 18px 20px; }
+
+  .marca { font-size: 2.9rem; }
+  .subtitulo { font-size: 1rem; letter-spacing: 2px; }
+  .adorno { font-size: 1.1rem; letter-spacing: 8px; padding-left: 8px; }
+  .descripcion { font-size: .85rem; }
+
+  .filtros {
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+  }
+  .filtro {
+    padding: 6px 14px;
+    font-size: .8rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    padding: 15px 15px 40px;
+  }
+
+  .card img { height: 220px; }
+
+  footer p { font-size: .95rem; }
+
+  .btn-wa-final {
+    padding: 14px 30px;
+    font-size: .95rem;
+  }
+}
